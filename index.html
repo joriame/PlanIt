@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PlanIt</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body onclick="">
+  <header class="header">
+    <div class="logo">
+      <div class="logo__img">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white"
+          stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 10.5V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h12.5"></path>
+          <path d="m9 11 3 3L22 4"></path>
+        </svg>
+      </div>
+      <div class="logo__text">
+        PlanIt
+      </div>
+    </div>
+    <div class="switch" id="theme-toggle">
+      <svg id="sun-switch" class="unvisible" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+        viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="4"></circle>
+        <path d="M12 2v2"></path>
+        <path d="M12 20v2"></path>
+        <path d="m4.93 4.93 1.41 1.41"></path>
+        <path d="m17.66 17.66 1.41 1.41"></path>
+        <path d="M2 12h2"></path>
+        <path d="M20 12h2"></path>
+        <path d="m6.34 17.66-1.41 1.41"></path>
+        <path d="m19.07 4.93-1.41 1.41"></path>
+      </svg>
+
+      <svg id="moon-switch" class="unvisible" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+        viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+      </svg>
+    </div>
+  </header>
+  <section class="tasks-count">
+    <div class="tasks__blocks">
+      <div class="block">
+        <h2 class="block__h">0</h2>
+        <p class="block__p">Всего</p>
+      </div>
+      <div class="block">
+        <h2 class="block__h">0</h2>
+        <p class="block__p">Выполнено</p>
+      </div>
+      <div class="block">
+        <h2 class="block__h">0</h2>
+        <p class="block__p">В процессе</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="answer">
+    <input class="answer__input" type="text" placeholder="Добавить новую задач...">
+    <button class="answer__btn" type="button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+        viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M5 12h14"></path>
+        <path d="M12 5v14"></path>
+      </svg></button>
+  </section>
+
+
+  <section class="board">
+    <div class="board__preview">
+      <div class="board__circle"></div>
+      <p class="board__desc">Пока нет задач. Добавьте первую задачу!</p>
+    </div>
+   
+
+    <template id="task-template">
+      <div class="task">
+        <div class="task__left">
+          <div class="task__circle"></div>
+          <h3 class="task__title"></h3>
+        </div>
+        <div class="svg-wrapper">
+          <div class="wrapper-red"></div>
+          <svg class="basket" xmlns="http://www.w3.org/2000/svg" width="24" height="24" 
+          viewBox="0 0 24 24" fill="none"
+          stroke="red" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 6h18"></path>
+            <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"></path>
+            <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path>
+            <line x1="10" x2="10" y1="11" y2="17"></line>
+            <line x1="14" x2="14" y1="11" y2="17"></line>
+          </svg>
+        </div>
+      </div>
+    </template>
+  </section>
+  <script src="/js/script.js"></script>
+</body>
+
+</html>

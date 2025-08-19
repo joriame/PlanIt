@@ -1,0 +1,327 @@
+$main-color: #fff
+$second-color: #09090b
+$font-color: #6e43f0
+$moon-color: #111015
+
+
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+
+*, *::before, *::after
+  box-sizing: border-box
+
+body
+  display: flex
+  justify-content: center
+  align-items: center
+  flex-direction: column
+  background: $main-color
+  transition: background 0.3s ease
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif 
+  overscroll-behavior-x: none
+  -webkit-tap-highlight-color: transparent
+
+body.dark
+  color: #858585
+  background: $second-color
+
+.dark .task 
+  box-shadow: 0px 0px 10px 1px #6e43f0
+  border: 1px solid #5d5c5c
+
+.dark .answer__input
+  color: #fff
+.header
+  display: flex
+  justify-content: space-between
+  align-items: center
+  max-width: 700px
+  width: 100%
+  padding: 25px 0
+
+
+
+.logo
+  display: flex
+  justify-content: center
+  align-items: center
+  gap: 10px
+  width: max-content
+  &__img
+    display: flex
+    justify-content: center
+    align-items: center
+    background: $font-color
+    width: 40px
+    height: 40px
+    border-radius: 8px
+  &__text
+    color: $font-color
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+    font-size: 30px
+    font-weight: bold
+    user-select: none
+
+.switch
+  cursor: pointer
+
+
+.tasks-count
+  display: flex
+  justify-content: center
+  align-items: center
+  max-width: 700px
+  width: 100%
+  margin-bottom: 50px
+.tasks__blocks
+    display: flex
+    justify-content: space-between
+    align-items: center
+    width: 100%
+.block
+  display: flex
+  justify-content: center
+  align-items: center
+  flex-direction: column
+  max-width: 180px
+  width: 100%
+  border: 1px solid #eeeeee
+  border-radius: 10px
+  height: max-content
+  padding: 20px
+  background: $main-color
+  transition: all .3s ease
+  &__h
+    color: $font-color
+    font-size: 25px
+  &__p
+    font-size: 16px
+    color: #605f5f
+
+
+
+
+
+.answer
+  display: flex
+  justify-content: space-between
+  align-items: center
+  max-width: 700px
+  width: 100%
+  margin-bottom: 50px
+  &__input
+    max-width: 600px
+    width: 100%
+    height: 50px
+    border-radius: 5px
+    outline: none
+    border: 1px solid #dddddd
+    font-size: 16px
+    padding-left: 15px
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+    transition: background 0.3s ease, border-color 0.3s ease;
+    &:focus
+      outline: 2px solid $font-color
+    &.error
+      outline: none
+      border: 2px solid red
+  &__btn
+    max-width: 50px
+    width: 100%
+    height: 50px
+    outline: none
+    background: $font-color
+    border: none
+    border-radius: 5px
+    cursor: pointer
+
+
+.moon-color
+  background: $moon-color
+  border: 1px solid #333333
+
+
+
+.board
+  display: flex
+  justify-content: space-between
+  align-items: center
+  max-width: 700px
+  flex-direction: column
+  width: 100%
+  gap: 40px
+  &__preview
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-direction: column
+  &__circle
+    background: #e2d9f8
+    width: 70px
+    height: 70px
+    border-radius: 50%
+    margin-bottom: 20px
+    transition: all .3s ease
+  &__desc
+    font-size: 18px
+    color: #605f5f
+.task
+  display: flex
+  justify-content: space-between
+  align-items: center
+  width: 100%
+  max-width: 700px
+  box-shadow: 0px 2px 10px #e9e9e9
+  height: auto
+  padding: 20px
+  border-radius: 5px
+  box-sizing: border-box
+  &__left
+    display: flex
+    justify-content: start
+    align-items: center
+    max-width: 90%
+    flex: 1           
+    gap: 10px  
+  &__circle
+    width: 20px
+    height: 20px
+    border: 2px solid #818181
+    border-radius: 50%
+    margin-right: 20px
+    cursor: pointer
+    transition: all .3s ease
+    position: relative
+    &:hover
+      background: $font-color
+      border: 2px solid $font-color
+    &::after 
+      content: ''
+      position: absolute
+      top: 40%
+      left: 50%
+      width: 6px
+      height: 10px
+      border: solid white
+      border-width: 0 2px 2px 0
+      transform: translate(-50%, -50%) rotate(45deg)
+      opacity: 0
+      transition: opacity 0.3s ease
+    &.circle-active
+      background: $font-color
+      border: 2px solid $font-color
+    &.circle-active::after 
+      opacity: 1
+  
+  &__title
+    font-weight: normal
+    font-size: 17px
+    line-height: normal
+    white-space: normal 
+    word-wrap: break-word 
+    overflow-wrap: break-word 
+    transition: all .3s ease
+    max-width: 90%
+
+
+  
+.title-active
+  text-decoration: line-through
+  color: #555555
+.svg-wrapper
+  display: flex
+  justify-content: center 
+  align-items: center
+  cursor: pointer
+  width: 34px
+  height: 34px
+  position: relative
+  &:hover
+    .wrapper-red
+      opacity: 0.1
+.wrapper-red
+  position: absolute
+  top: 0
+  width: 34px
+  height: 34px
+  background: red
+  border-radius: 5px
+  opacity: 0
+  transition: opacity 0.3s ease
+  z-index: 0
+.basket
+  position: relative
+  z-index: 1
+  
+
+.circle-color
+  background: #211739
+
+
+.unvisible
+  display: none
+  transition: all .3s ease
+.visible
+  display: flex
+  transition: all .3s ease
+
+
+
+
+// ===== Адаптив =====
+@media (max-width: 1024px)
+  .header, .tasks-count, .answer, .board
+    padding: 10px 20px
+
+
+@media (max-width: 900px)
+  .header, .tasks-count, .answer, .board
+    max-width: 600px
+@media (max-width: 768px)
+  .header
+    gap: 15px
+  .logo__text
+    font-size: 24px
+  .tasks__blocks
+    flex-direction: column
+    gap: 15px
+  .block
+    max-width: 100%
+    width: 100%
+
+  .answer
+    flex-direction: column
+    gap: 10px
+    margin-bottom: 10px
+    &__input
+      max-width: 100%
+    &__btn
+      max-width: 100%
+      width: 100%
+
+  .task
+    gap: 10px
+    &__left
+      max-width: 100%
+      flex-wrap: wrap
+    &__title
+      max-width: 100%
+  .tasks-count
+    margin-bottom: 0
+@media (max-width: 480px)
+  .logo__text
+    font-size: 20px
+  .board__desc
+    font-size: 16px
+    text-align: center
+    padding: 0 10px
+  .task
+    padding: 15px
+    &__circle
+      margin-right: 10px
+  .block__h
+    font-size: 20px
+  .block__p
+    font-size: 14px
